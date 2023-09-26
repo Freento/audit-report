@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content" htmlClass="freento-auditreport-report-container" htmlTag="div">
+            <block name="freento_auditreport.reports.container"
+                   class="Magento\Backend\Block\Template"
+                   template="Freento_AuditReport::container.phtml">
+                <block class="Freento\AuditReport\Block\Adminhtml\ReportTabs"
+                       name="freento_auditreport.reports"
+                       as="reports"
+                       template="Magento_Backend::widget/tabshoriz.phtml" />
+            </block>
+        </referenceContainer>
+    </body>
+</page>

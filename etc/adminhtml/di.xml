@@ -1,0 +1,49 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- adds rendering parameters to Freento_AuditReport -->
+    <virtualType name="Freento\AuditReport\Model\ReportList" type="Magento\Framework\DataObject">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="fsa" xsi:type="array">
+                    <item name="order" xsi:type="number">100</item>
+                    <item name="class" xsi:type="string">Freento\AuditReport\Block\Adminhtml\FullSiteAudit</item>
+                    <item name="label" xsi:type="string">Full site audit</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Freento\AuditReport\Block\Adminhtml\ReportTabs">
+        <arguments>
+            <argument name="reports" xsi:type="object">Freento\AuditReport\Model\ReportList</argument>
+        </arguments>
+    </type>
+    <type name="Freento\AuditReport\Controller\Adminhtml\Index\Report">
+        <arguments>
+            <argument name="reports" xsi:type="object">Freento\AuditReport\Model\ReportList</argument>
+        </arguments>
+    </type>
+
+    <!-- Custom log file -->
+    <virtualType name="Freento\AuditReport\Logger\Handler" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/freento_audit.log</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Freento\AuditReport\Logger\Audit" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="debug" xsi:type="object">Freento\AuditReport\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Freento\AuditReport\Block\Adminhtml\Tab\View">
+        <arguments>
+            <argument name="logger" xsi:type="object">Freento\AuditReport\Logger\Audit</argument>
+        </arguments>
+    </type>
+    <type name="Freento\AuditReport\Block\Adminhtml\Reports">
+        <arguments>
+            <argument name="logger" xsi:type="object">Freento\AuditReport\Logger\Audit</argument>
+        </arguments>
+    </type>
+</config>

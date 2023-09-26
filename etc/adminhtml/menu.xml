@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <update id="Freento_Modules::freento"
+             title="Freento"
+             translate="title"
+             module="Freento_AuditReport"
+             sortOrder="60"
+             resource="Freento_Modules::freento"
+        />
+        <add id="Freento_AuditReport::auditreport"
+             title="Audit Report"
+             translate="title"
+             module="Freento_AuditReport"
+             parent="Freento_Modules::freento"
+             sortOrder="10"
+             action="freento_auditreport"
+             resource="Freento_AuditReport::auditreport"/>
+    </menu>
+</config>

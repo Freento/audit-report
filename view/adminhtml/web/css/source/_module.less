@@ -1,0 +1,63 @@
+@color-report-border: #d1d1d1;
+@color-report-background: #fff;
+
+.freento-auditreport-report-container {
+    .ui-tabs-panel {
+        background: url('@{baseDir}images/ajax-loader-small.gif') no-repeat 50% 75%;
+        border-top: 1px solid @color-gray68;
+
+        &.report-loaded {
+            background: none;
+        }
+    }
+
+    .report-data {
+        background-color: @color-report-background;
+        min-height: 100px;
+    }
+
+    .long-operation {
+        &:after {
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48ZyB0cmFuc2Zvcm09InNjYWxlKDAuMDMyKSI+PHBhdGggZD0iTTQ3Ny4yLDQ4MS41YzAsMC0xMTQuNi0xMTEuNS0xNTkuMy0yMzkuOHYtMzQuOWgzNjR2MzQuOWMtNTgsMTQxLjYtMTU5LjMsMjM5LjgtMTU5LjMsMjM5LjhINDc3LjJ6Ii8+PHBhdGggZD0iTTgxMy4yLDE3MHYtNTVoNTIuMlYxMEgxMzQuNnYxMDQuOWg1Mi4ydjU1YzAsODQuMSwxNTAuOCwzMTMuNiwxNTgsMzMwLjJjLTcsMTYuNi0xNTgsMjQ2LjEtMTU4LDMyOS44djU1aC01Mi4yVjk5MGg3MzAuOFY4ODQuOWgtNTIuMnYtNTVjMC04NC4xLTE1MS0zMTIuMi0xNTguOS0zMzBDNjYyLjIsNDgyLjIsODEzLjIsMjU0LDgxMy4yLDE3MHogTTc2MSw4MzB2NTVIMjM4Ljl2LTU1YzAtNjAuNCwxNjAtMjk5LjcsMTYwLTMzMHMtMTYwLTI2OS42LTE2MC0zMzB2LTU1aDUyMnY1NWMwLDYwLjUtMTYxLjMsMjk5LjctMTYxLjMsMzMwQzU5OS43LDUzMC4yLDc2MSw3NjkuNiw3NjEsODMweiIvPjwvZz48L3N2Zz4=);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            content: ' ';
+            display: block;
+            float: right;
+            height: 20px;
+            margin-left: 10px;
+            width: 20px;
+        }
+    }
+
+    div.admin__collapsible-block-wrapper.active div.admin__collapsible-title:before {
+        content: '\e615';
+    }
+
+    .report-description {
+        border: 1px solid @color-report-border;
+        margin-bottom: 2rem;
+        padding: 1rem 2rem 1rem 2rem;
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .freento-fullsiteaudit .action-primary {
+        display: block;
+        font-size: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2rem;
+        width: max-content;
+    }
+
+    //  for Magento 2.3
+    .data-grid {
+        th, td {
+            vertical-align: middle;
+        }
+    }
+}

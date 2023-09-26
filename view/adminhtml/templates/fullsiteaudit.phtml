@@ -1,0 +1,29 @@
+<?php
+/** @var \Magento\Framework\Escaper $escaper */
+?>
+<div class="freento-fullsiteaudit report-data">
+    <p>
+        <?= $escaper->escapeHtml(
+            __('Freento Audit Report extension provides you with a detailed overview of how different areas of '
+                . 'your site are functioning.')
+        ) ?>
+    </p>
+
+    <p>
+        <?= $escaper->escapeHtml(
+            __('However, the report does not cover all possible site areas (like security audit) nor provide '
+                . 'detailed instructions on how to fix specific report issues.')
+        ) ?>
+    </p>
+
+    <p>
+        <?= $escaper->escapeHtml(
+            __('If you would like to run a comprehensive audit of your store or get a detailed report explanation '
+                . 'from a senior Magento developer, please reach out and our team will be happy to help.')
+        ) ?>
+    </p>
+
+    <a href="https://freento.com/contact" target="_blank" class="action-primary">
+        <?= $escaper->escapeHtml(__('Contact us')) ?>
+    </a>
+</div>
