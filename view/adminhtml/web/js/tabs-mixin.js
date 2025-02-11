@@ -26,9 +26,11 @@ define([
     }
 
     return function (target) {
-        if ($('.freento-auditreport-report-container').length) {
-            $.widget('ui.tabs', target, mixin);
+        if (!$('.freento-auditreport-report-container').length) {
+            return target;
         }
+
+        $.widget('ui.tabs', target, mixin);
         return $.ui.tabs;
     }
 });

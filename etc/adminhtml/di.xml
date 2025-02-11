@@ -41,7 +41,7 @@
             <argument name="logger" xsi:type="object">Freento\AuditReport\Logger\Audit</argument>
         </arguments>
     </type>
-    <type name="Freento\AuditReport\Block\Adminhtml\Reports">
+    <type name="Freento\AuditReport\Block\Adminhtml\ReportTabs">
         <arguments>
             <argument name="logger" xsi:type="object">Freento\AuditReport\Logger\Audit</argument>
         </arguments>
